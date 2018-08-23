@@ -18,13 +18,13 @@
 
 # Directory Contol
 CR_DIR=$(pwd)
-CR_TC=/home/prashantp01/gcc-linaro-7.3.1/bin/aarch64-linux-gnu-
+CR_TC=/home/jaskaran/android/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 CR_DTS=arch/arm64/boot/dts
 CR_DTB=$CR_DIR/boot.img-dtb
 # Kernel Variables
-CR_VERSION=V1.0
-CR_NAME=Quantum_Kernel
-CR_JOBS=5
+CR_VERSION=V2.0
+CR_NAME=-SolarX-kernel-
+CR_JOBS=3
 CR_ANDROID=o
 CR_PLATFORM=8.0.0
 CR_ARCH=arm64
@@ -37,30 +37,30 @@ export $CR_ARCH
 ##########################################
 # Device specific Variables [SM-J710F]
 CR_DTSFILES_J710F="exynos7870-j7xelte_eur_open_00.dtb exynos7870-j7xelte_eur_open_01.dtb exynos7870-j7xelte_eur_open_02.dtb exynos7870-j7xelte_eur_open_03.dtb exynos7870-j7xelte_eur_open_04.dtb"
-CR_CONFG_J710F=j7xelte_03_defconfig
+CR_CONFG_J710F=j7xelte_defconfig
 CR_VARIANT_J710F=J7xelte
 # Device specific Variables [SM-J701F]
 CR_DTSFILES_J701F="exynos7870-j7velte_sea_open_00.dtb exynos7870-j7velte_sea_open_01.dtb exynos7870-j7velte_sea_open_03.dtb"
-CR_CONFG_J701F=exynos7870-j7velte_sea_open_defconfig
+CR_CONFG_J701F=j7velte_defconfig
 CR_VARIANT_J701F=J7velte
 ##########################################
 
 # Script functions
-CLEAN_SOURCE()
-{
-echo "----------------------------------------------"
-echo " "
-echo "Cleaning"	
-make clean
-make mrproper
+# CLEAN_SOURCE()
+# {
+# echo "----------------------------------------------"
+# echo " "
+# echo "Cleaning"	
+# make clean
+# make mrproper
 # rm -r -f $CR_OUT/*
-rm -r -f $CR_DTB
-rm -rf $CR_DTS/.*.tmp
-rm -rf $CR_DTS/.*.cmd
-rm -rf $CR_DTS/*.dtb 
-echo " "
-echo "----------------------------------------------"	
-}
+# rm -r -f $CR_DTB
+# rm -rf $CR_DTS/.*.tmp
+# rm -rf $CR_DTS/.*.cmd
+# rm -rf $CR_DTS/*.dtb 
+# echo " "
+# echo "----------------------------------------------"	
+# }
 BUILD_ZIMAGE()
 {
 	echo "----------------------------------------------"
@@ -106,7 +106,7 @@ do
     case $menuvar in
         "SM-J710F")
             clear
-            CLEAN_SOURCE
+            # CLEAN_SOURCE
             echo "Starting $CR_VARIANT_J710F kernel build..."
 	    CR_VARIANT=$CR_VARIANT_J710F
 	    CR_CONFG=$CR_CONFG_J710F
@@ -124,7 +124,7 @@ do
             ;;
         "SM-J701F")
             clear
-            CLEAN_SOURCE
+            # CLEAN_SOURCE
             echo "Starting $CR_VARIANT_J701F kernel build..."
 	    CR_VARIANT=$CR_VARIANT_J701F
 	    CR_CONFG=$CR_CONFG_J701F
