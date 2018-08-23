@@ -18,6 +18,18 @@ obj-$(CONFIG_BLK_DEV_THROTTLING)	+= blk-throttle.o
 obj-$(CONFIG_IOSCHED_NOOP)	+= noop-iosched.o
 obj-$(CONFIG_IOSCHED_DEADLINE)	+= deadline-iosched.o
 obj-$(CONFIG_IOSCHED_CFQ)	+= cfq-iosched.o
+<<<<<<< HEAD
+=======
+obj-$(CONFIG_IOSCHED_BFQ)	+= bfq-iosched.o
+obj-$(CONFIG_IOSCHED_FIFO)	+= fifo-iosched.o
+obj-$(CONFIG_IOSCHED_FIOPS)	+= fiops-iosched.o
+obj-$(CONFIG_IOSCHED_SIO)	+= sio-iosched.o
+obj-$(CONFIG_IOSCHED_SIOPLUS)	+= sioplus-iosched.o
+obj-$(CONFIG_IOSCHED_TRIPNDROID)+= tripndroid-iosched.o
+obj-$(CONFIG_IOSCHED_VR)	+= vr-iosched.o
+obj-$(CONFIG_IOSCHED_ZEN)	+= zen-iosched.o
+obj-$(CONFIG_IOSCHED_MAPLE)     += maple-iosched.o
+>>>>>>> e52b18d... Block: Maple I/O Sched
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
 obj-$(CONFIG_BLK_CMDLINE_PARSER)	+= cmdline-parser.o
