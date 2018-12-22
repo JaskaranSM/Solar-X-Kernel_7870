@@ -50,8 +50,6 @@ config CFQ_GROUP_IOSCHED
 	---help---
 	  Enable group IO scheduling in CFQ.
 
-<<<<<<< HEAD
-=======
 config IOSCHED_BFQ
 	tristate "BFQ I/O scheduler"
 	default n
@@ -132,7 +130,6 @@ config IOSCHED_MAPLE
 	tristate "Maple I/O scheduler"
 	default y
 
->>>>>>> e52b18d... Block: Maple I/O Sched
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -159,8 +156,6 @@ choice
 	config DEFAULT_NOOP
 		bool "No-op"
 
-<<<<<<< HEAD
-=======
 	config DEFAULT_FIFO
 		bool "fifo" if IOSCHED_FIFO=y
 
@@ -185,7 +180,6 @@ choice
 	config DEFAULT_MAPLE
 		bool "Maple" if IOSCHED_MAPLE=y
 
->>>>>>> e52b18d... Block: Maple I/O Sched
 endchoice
 
 config DEFAULT_IOSCHED
@@ -194,8 +188,7 @@ config DEFAULT_IOSCHED
     default "row" if DEFAULT_ROW
 	default "cfq" if DEFAULT_CFQ
 	default "noop" if DEFAULT_NOOP
-<<<<<<< HEAD
-=======
+
 	default "fifo" if DEFAULT_FIFO	
 	default "fiops" if DEFAULT_FIOPS	
 	default "sio" if DEFAULT_SIO
@@ -204,7 +197,6 @@ config DEFAULT_IOSCHED
 	default "vr" if DEFAULT_VR
 	default "zen" if DEFAULT_ZEN
 	default "maple" if DEFAULT_MAPLE
->>>>>>> e52b18d... Block: Maple I/O Sched
 
 endmenu
 

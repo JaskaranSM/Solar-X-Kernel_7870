@@ -31,6 +31,7 @@
  * fsync_mutex protects dyn_fsync_active during power suspend / late resume
  * transitions
  */
+
 static DEFINE_MUTEX(fsync_mutex);
 
 bool power_suspend_active __read_mostly = true;
